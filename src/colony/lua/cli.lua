@@ -39,7 +39,9 @@ if #arg < 2 then
 end
 local p = arg[2]
 if string.sub(p, 1, 1) ~= '.' then
-  p = './' .. p
+  if string.sub(p, 1, 1) ~= '/' then
+    p = './' .. p
+  end
 end
 
 colony.global:setImmediate(function ()
